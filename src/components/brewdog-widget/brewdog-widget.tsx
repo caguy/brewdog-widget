@@ -41,7 +41,7 @@ export class BrewdogWidget {
     return (
       <Host>
         <section class="bw_container">
-          {this.status === 'loading' && <span>Loading...</span>}
+          {this.status === 'loading' && <div class="bw_spinner" />}
           {this.status === 'loaded' && <BeerCard beer={this.beers[0]} />}
           {this.status === 'error' && <span>An error has occured</span>}
         </section>

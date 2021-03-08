@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
 
-$accent-color: #090b2a;
-$accent-color-light: lighten($accent-color, 5%);
+$background-color: #090b2a;
+$background-color-light: lighten($background-color, 5%);
+$accent-color: #2bceff;
 $text-color: #e8eaf6;
 $main-font: 'Roboto', sans-serif;
 $font-size-ref: 0.9rem;
@@ -15,6 +16,8 @@ $font-size-ref: 0.9rem;
 .bw_container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 400px;
 }
 
 .bw_card {
@@ -22,9 +25,9 @@ $font-size-ref: 0.9rem;
   align-items: center;
   padding: 0;
   width: 80%;
-  height: 400px;
+  height: 100%;
   max-width: 700px;
-  background-color: $accent-color;
+  background-color: $background-color;
   color: $text-color;
   border-radius: 30px;
   overflow: hidden;
@@ -76,7 +79,7 @@ $font-size-ref: 0.9rem;
 
 .bw_card-figure {
   display: inline-block;
-  background-color: $accent-color-light;
+  background-color: $background-color-light;
   border-radius: 15px;
   margin-right: 1em;
   padding: 0.75em 0.5em;
@@ -108,4 +111,22 @@ $font-size-ref: 0.9rem;
 
 .bw_card-pairing-item {
   line-height: 1.75;
+}
+
+.bw_spinner {
+  width: 3em;
+  height: 3em;
+  border: solid 1px $background-color;
+  border-top: solid 1px $accent-color;
+  border-radius: 50%;
+  animation: spinner 750ms linear infinite;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
