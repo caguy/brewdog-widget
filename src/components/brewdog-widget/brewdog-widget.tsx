@@ -1,6 +1,7 @@
 import { Component, Host, h, State, Prop, Watch } from '@stencil/core';
 import axios from 'axios';
 import { buildPunkApiRequest } from './brewdog-utils';
+import BeerCard from './BeerCard';
 
 @Component({
   tag: 'brewdog-widget',
@@ -39,10 +40,11 @@ export class BrewdogWidget {
   render() {
     return (
       <Host>
-        <h1>Random beer :</h1>
-        {this.status === 'loading' && <span>Loading...</span>}
-        {this.status === 'loaded' && <span>{this.beers[0]?.name}</span>}
-        {this.status === 'error' && <span>An error has occured</span>}
+        <section class="bw_container">
+          {this.status === 'loading' && <span>Loading...</span>}
+          {this.status === 'loaded' && <BeerCard beer={this.beers[0]} />}
+          {this.status === 'error' && <span>An error has occured</span>}
+        </section>
       </Host>
     );
   }

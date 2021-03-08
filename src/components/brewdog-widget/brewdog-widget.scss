@@ -1,3 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
+
+$accent-color: #090b2a;
+$accent-color-light: lighten($accent-color, 5%);
+$text-color: #e8eaf6;
+$main-font: 'Roboto', sans-serif;
+$font-size-ref: 0.9rem;
+
 :host {
   display: block;
+  font-family: $main-font;
+  font-size: $font-size-ref;
+}
+
+.bw_container {
+  display: flex;
+  justify-content: center;
+}
+
+.bw_card {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  width: 80%;
+  height: 400px;
+  max-width: 700px;
+  background-color: $accent-color;
+  color: $text-color;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.bw_card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 85%;
+  padding: 1em 1.5em 1em 2em;
+}
+
+.bw_card-image-img {
+  height: 85%;
+  max-width: 80%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.bw_card-content {
+  width: 75%;
+  height: 100%;
+  overflow: auto;
+  padding: 1em 2em 1em 1.5em;
+}
+
+.bw_card-title {
+  margin: 1em 0 0 0;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.bw_card-tagline {
+  margin: 0;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.bw_card-description {
+  line-height: 1.75;
+}
+
+.bw_card-figures {
+  margin: 1.5em 0;
+}
+
+.bw_card-figure {
+  display: inline-block;
+  background-color: $accent-color-light;
+  border-radius: 15px;
+  margin-right: 1em;
+  padding: 0.75em 0.5em;
+  min-width: 75px;
+  font-size: 0.8em;
+}
+
+.bw_card-figure-label {
+  text-align: center;
+  letter-spacing: 2px;
+  opacity: 0.5;
+}
+
+.bw_card-figure-value {
+  font-size: 1.75em;
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+}
+
+.bw_card-pairing-title {
+  font-weight: bold;
+}
+
+.bw_ward-pairing-list {
+  margin: 0.5em 0;
+  padding-left: 1.25em;
+}
+
+.bw_card-pairing-item {
+  line-height: 1.75;
 }
