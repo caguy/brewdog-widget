@@ -1,5 +1,6 @@
-import { Component, Host, h, State } from '@stencil/core';
+import { Component, Host, h, State, Prop, Watch } from '@stencil/core';
 import axios from 'axios';
+import { buildPunkApiRequest } from './brewdog-utils';
 
 @Component({
   tag: 'brewdog-widget',
@@ -7,12 +8,19 @@ import axios from 'axios';
   shadow: true,
 })
 export class BrewdogWidget {
+  @Prop() food: string;
+  @Watch('food')
+  foodChangeHandler(): void {
+    this.status = 'loading';
+    this.fetchBeers();
+  }
+
   @State() status: 'loading' | 'loaded' | 'error';
   @State() beers: any[];
 
   async fetchBeers() {
     try {
-      const beers = await axios.get('https://api.punkapi.com/v2/beers/random');
+      const beers = await axios.get(buildPunkApiRequest(this.food));
       this.status = 'loaded';
       this.beers = beers.data;
     } catch (err) {
