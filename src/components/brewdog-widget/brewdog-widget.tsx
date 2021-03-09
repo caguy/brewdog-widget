@@ -1,7 +1,7 @@
 import { Component, Host, h, State, Prop, Watch } from '@stencil/core';
 import axios from 'axios';
 import {shuffle} from "lodash";
-import BeerCard from './BeerCard';
+import BeerCard from './views/BeerCard';
 
 @Component({
   tag: 'brewdog-widget',
