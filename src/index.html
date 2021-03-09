@@ -3,12 +3,54 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+    <title>Brewdog food pairing</title>
+    <style>
+      html, body {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+      
+      main {
+        margin: auto;
+      }
 
-    <script type="module" src="/build/brewdog-widget.esm.js"></script>
-    <script nomodule src="/build/brewdog-widget.js"></script>
+      .dinner {
+        margin-bottom: 3em;
+      }
+
+      h1, h2, .input {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <brewdog-widget food="chicken"></brewdog-widget>
+  <main>
+    <form id="form" class="dinner">
+      <h1><label for="food">What do you fancy for dinner?</label></h1>
+      <div class="input">
+        <input id="food" type="text" placeholder="chicken, lamb, ..." />
+        <input type="submit" value="Get me a drink"/>
+      </div>
+    </form>
+    <div class="drink">
+      <h2>Brewdog's suggestion:</h2>
+      <brewdog-widget id="widget"></brewdog-widget>
+    </div>
+    </main>
+    <script type="module" src="/build/brewdog-widget.esm.js"></script>
+    <script nomodule src="/build/brewdog-widget.js"></script>
+    <script>
+      const food = document.getElementById("food");
+      const widget = document.getElementById("widget");
+      const form = document.getElementById("form");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        widget.setAttribute("food", food.value);
+      });
+    </script>
   </body>
 </html>

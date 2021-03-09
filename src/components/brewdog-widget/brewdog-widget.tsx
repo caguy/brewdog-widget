@@ -50,10 +50,12 @@ export class BrewdogWidget {
     try {
       let response;
 
-      if(this.food && this.beerPool.length === 0){
-        response = await axios.get(`https://api.punkapi.com/v2/beers?food=${this.food.split(/\s+/).join('_')}&per_page=80`);
-      } else {
-        response = await axios.get(`https://api.punkapi.com/v2/beers/random`);
+      switch(true){
+        case this.food && this.beerPool.length === 0:
+          response = await axios.get(`https://api.punkapi.com/v2/beers?food=${this.food.split(/\s+/).join('_')}&per_page=80`);
+          if(response.data.length > 0) break;
+        default:
+          response = await axios.get(`https://api.punkapi.com/v2/beers/random`);
       }
       
       this.beerPool = [...this.beerPool, ...shuffle(response.data)];
@@ -71,7 +73,11 @@ export class BrewdogWidget {
           {this.status === 'loaded' && <BeerCard beer={this.beerPool[this.currentIndex]} />}
           {this.status === 'error' && <span class="bw_error">An error has occured</span>}
         </section>
-        {this.status !== 'error' && <nav class="bw_navigation"><button disabled={this.currentIndex === 0 || this.status === 'loading'} onClick={() => this.previousBeer()}>←</button><button disabled={this.status === 'loading'} onClick={() => this.nextBeer()}>→</button></nav>}
+        {this.status !== 'error' && 
+          <nav class="bw_navigation">
+            <button name="previous" aria-label="previous suggestion" disabled={this.currentIndex === 0 || this.status === 'loading'} onClick={() => this.previousBeer()}>←</button>
+            <button name="next" aria-label="next suggestion" disabled={this.status === 'loading'} onClick={() => this.nextBeer()}>→</button>
+          </nav>}
       </Host>
     );
   }

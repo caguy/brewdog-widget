@@ -12,14 +12,15 @@
   justify-content: center;
   align-items: center;
   height: $card-height;
+  width: $card-width;
 }
 
 .bw_card {
   display: flex;
   align-items: center;
   padding: 0;
-  width: 80%;
   height: 100%;
+  width: 100%;
   max-width: $card-width;
   @include background;
   @include box-shadow;
