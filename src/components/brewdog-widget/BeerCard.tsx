@@ -9,9 +9,9 @@ const BeerFigure = ({ label, value }) => (
 
 const BeerCard = ({ beer }) => (
   <article id={`bw_${beer.id}`} class="bw_card">
-    <div class="bw_card-image">
+    {beer.image_url && <div class="bw_card-image">
       <img class="bw_card-image-img" src={beer.image_url} alt={`A ${beer.name} bottle`} />
-    </div>
+    </div>}
     <div class="bw_card-content">
       <header>
         <p class="bw_card-title">{beer.name}</p>
@@ -27,10 +27,10 @@ const BeerCard = ({ beer }) => (
         </ul>
       </div>
       <div class="bw_card-figures">
-        <BeerFigure label="ABV" value={beer.abv} />
-        <BeerFigure label="IBU" value={beer.ibu} />
-        <BeerFigure label="EBC" value={beer.ebc} />
-        <BeerFigure label="PH" value={beer.ph} />
+        {beer.abv && <BeerFigure label="ABV" value={beer.abv} />}
+        {beer.ibu && <BeerFigure label="IBU" value={beer.ibu} />}
+        {beer.ebc && <BeerFigure label="EBC" value={beer.ebc} />}
+        {beer.ph && <BeerFigure label="PH" value={beer.ph} />}
       </div>
     </div>
   </article>

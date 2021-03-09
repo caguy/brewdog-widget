@@ -32,11 +32,11 @@
 
 .bw_card-image {
   display: flex;
+  flex: 1 1 25%;
   justify-content: center;
   align-items: center;
-  width: 25%;
   height: 85%;
-  padding: 1em 1.5em 1em 2em;
+  padding: 1em 0 1em 3em;
 }
 
 .bw_card-image-img {
@@ -47,10 +47,10 @@
 }
 
 .bw_card-content {
-  width: 75%;
+  flex: 1 1 75%;
   height: 100%;
   overflow: auto;
-  padding: 1em 2em 1em 1.5em;
+  padding: 1em 3em 1em 3em;
 }
 
 .bw_card-title {
