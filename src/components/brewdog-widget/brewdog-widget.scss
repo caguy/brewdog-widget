@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
 @import 'theme';
+@import "constants";
 
 :host {
   display: block;
@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: $card-height;
 }
 
 .bw_card {
@@ -20,11 +20,9 @@
   padding: 0;
   width: 80%;
   height: 100%;
-  max-width: 700px;
-  background: $bg-color-1;
-  background: -webkit-linear-gradient(to right, $bg-color-2, $bg-color-1);
-  background: linear-gradient(to right, $bg-color-2, $bg-color-1);
-  box-shadow: 2px 2px 15px 0px #00000050;
+  max-width: $card-width;
+  @include background;
+  @include box-shadow;
   color: $text-color;
   border-radius: 30px;
   overflow: hidden;
@@ -71,17 +69,17 @@
 }
 
 .bw_card-figures {
-  margin: 1.5em 0;
+  margin: 1em 0;
 }
 
 .bw_card-figure {
   display: inline-block;
-  background-color: $accent-color;
+  background-color: $bg-color-2;
   border-radius: 15px;
-  margin-right: 1em;
-  padding: 0.75em 0.5em;
-  min-width: 75px;
-  font-size: 0.8em;
+  margin-right: 1.5em;
+  padding: 0.5em 0.3em;
+  min-width: 50px;
+  font-size: 0.7em;
 }
 
 .bw_card-figure-label {
@@ -113,7 +111,7 @@
 .bw_spinner {
   width: 3em;
   height: 3em;
-  border: solid 1px $text-color;
+  border: solid 1px $bg-color-1;
   border-top: solid 1px $accent-color;
   border-radius: 50%;
   animation: spinner 750ms linear infinite;
@@ -125,5 +123,32 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.bw_navigation{
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0;
+  margin: 0 auto;
+  max-width: $card-width;
+}
+
+button{
+  $size: 3;
+  height: #{$size}em;
+  width: #{$size}em;
+  padding: 0.5em 0;
+  @include background;
+  @include box-shadow;
+  font-family: $main-font;
+  border: none;
+  border-radius: #{$size / 2}em;
+  font-weight: bold;
+  color: $text-color;
+  text-align: center;
+
+  &:disabled{
+    opacity: 0.5;
   }
 }

@@ -3,6 +3,16 @@
 $accent-color: #95b9fd;
 $text-color: #36393d;
 $bg-color-1: #e0eafc;
-$bg-color-2: #cfdef3;
+$bg-color-2: #cfd2f3;
 $main-font: 'Roboto', sans-serif;
 $font-size-ref: 0.9rem;
+
+@mixin background {
+  background: $bg-color-1;
+  background: -webkit-linear-gradient(to right, $bg-color-2, $bg-color-1);
+  background: linear-gradient(to right, $bg-color-2, $bg-color-1);
+}
+
+@mixin box-shadow {
+  box-shadow: 2px 2px 15px 1px #00000025;
+}

@@ -17,6 +17,12 @@ const BeerCard = ({ beer }) => (
         <p class="bw_card-title">{beer.name}</p>
         <p class="bw_card-tagline">{beer.tagline}</p>
       </header>
+            <div class="bw_card-figures">
+        {beer.abv && <BeerFigure label="ABV" value={beer.abv} />}
+        {beer.ibu && <BeerFigure label="IBU" value={beer.ibu} />}
+        {beer.ebc && <BeerFigure label="EBC" value={beer.ebc} />}
+        {beer.ph && <BeerFigure label="PH" value={beer.ph} />}
+      </div>
       <p class="bw_card-description">{beer.description}</p>
       <div class="bw_card-pairing">
         <div class="bw_card-pairing-title">Food pairing:</div>
@@ -25,12 +31,6 @@ const BeerCard = ({ beer }) => (
             <li class="bw_card-pairing-item">{food}</li>
           ))}
         </ul>
-      </div>
-      <div class="bw_card-figures">
-        {beer.abv && <BeerFigure label="ABV" value={beer.abv} />}
-        {beer.ibu && <BeerFigure label="IBU" value={beer.ibu} />}
-        {beer.ebc && <BeerFigure label="EBC" value={beer.ebc} />}
-        {beer.ph && <BeerFigure label="PH" value={beer.ph} />}
       </div>
     </div>
   </article>
