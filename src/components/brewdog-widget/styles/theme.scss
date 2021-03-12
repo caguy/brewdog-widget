@@ -6,6 +6,15 @@ $bg-color-1: #e0eafc;
 $bg-color-2: #cfd2f3;
 $main-font: 'Roboto', sans-serif;
 $font-size-ref: 0.9rem;
+$font-size-ref-sm: 0.75rem;
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
 
 @mixin background {
   background: $bg-color-1;

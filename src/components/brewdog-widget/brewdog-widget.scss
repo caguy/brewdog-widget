@@ -5,6 +5,10 @@
   display: block;
   font-family: $main-font;
   font-size: $font-size-ref;
+
+  @media screen and (max-width: map-get($breakpoints, "sm")){
+    font-size: $font-size-ref-sm;
+  }
 }
 
 .bw_container {
@@ -12,7 +16,8 @@
   justify-content: center;
   align-items: center;
   height: $card-height;
-  width: $card-width;
+  width: 100%;
+  max-width: $card-width;
 }
 
 .bw_card {
@@ -36,6 +41,11 @@
   align-items: center;
   height: 85%;
   padding: 1em 0 1em 3em;
+
+  @media screen and (max-width: map-get($breakpoints, "sm")){
+    padding: 0.5em 0 0.5em 1.5em;
+    height: 50%;
+  }
 }
 
 .bw_card-image-img {
@@ -48,8 +58,11 @@
 .bw_card-content {
   flex: 1 1 75%;
   height: 100%;
-  overflow: auto;
   padding: 1em 3em 1em 3em;
+
+  @media screen and (max-width: map-get($breakpoints, "sm")){
+    padding: 0.5em 1.5em 0.5em 1.5em;
+  }
 }
 
 .bw_card-title {
