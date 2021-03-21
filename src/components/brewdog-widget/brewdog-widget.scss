@@ -1,12 +1,12 @@
 @import 'styles/theme';
-@import "styles/constants";
+@import 'styles/constants';
 
 :host {
   display: block;
   font-family: $main-font;
   font-size: $font-size-ref;
 
-  @media screen and (max-width: map-get($breakpoints, "sm")){
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
     font-size: $font-size-ref-sm;
   }
 }
@@ -42,7 +42,7 @@
   height: 85%;
   padding: 1em 0 1em 3em;
 
-  @media screen and (max-width: map-get($breakpoints, "sm")){
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
     padding: 0.5em 0 0.5em 1.5em;
     height: 50%;
   }
@@ -59,8 +59,9 @@
   flex: 1 1 75%;
   height: 100%;
   padding: 1em 3em 1em 3em;
+  overflow-y: auto;
 
-  @media screen and (max-width: map-get($breakpoints, "sm")){
+  @media screen and (max-width: map-get($breakpoints, 'sm')) {
     padding: 0.5em 1.5em 0.5em 1.5em;
   }
 }
@@ -140,7 +141,7 @@
   }
 }
 
-.bw_navigation{
+.bw_navigation {
   display: flex;
   justify-content: space-between;
   padding: 2em 0;
@@ -148,7 +149,7 @@
   max-width: $card-width;
 }
 
-button{
+button {
   $size: 3;
   height: #{$size}em;
   width: #{$size}em;
@@ -162,7 +163,7 @@ button{
   color: $text-color;
   text-align: center;
 
-  &:disabled{
+  &:disabled {
     opacity: 0.5;
   }
 }
