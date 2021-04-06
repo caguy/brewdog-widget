@@ -1,10 +1,16 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Brewdog food pairing</title> <style>html,
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Brewdog food pairing</title> <style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
+
+      html,
       body {
         display: flex;
         margin: 0;
         padding: 0;
         width: 100%;
         height: 100%;
+      }
+
+      * {
+        font-family: Roboto, sans-serif;
       }
 
       main {
@@ -19,6 +25,26 @@
       h2,
       .input {
         text-align: center;
+      }
+
+      input[type='text'] {
+        background: none;
+        padding: 0.5em 1em;
+        margin: 0;
+        font-size: 1.1rem;
+        border: solid 1px grey;
+        border-radius: 2.1em 0 0 2.1em;
+        margin-right: -0.3em;
+      }
+
+      input[type='submit'] {
+        background: none;
+        padding: 0.5em 1em;
+        margin: 0;
+        font-size: 1.1rem;
+        border: solid 1px grey;
+        border-radius: 0 2.1em 2.1em 0;
+        background-color: #c5cae9;
       }</style> </head> <body> <main> <form id="form" class="dinner"> <h1><label for="food">What do you fancy for dinner?</label></h1> <div class="input"> <input id="food" type="text" placeholder="chicken, lamb, ..."> <input type="submit" value="Get me a drink"> </div> </form> <div class="drink"> <h2>Brewdog's suggestion:</h2> <brewdog-widget id="widget"></brewdog-widget> </div> </main> <script type="module" src="/brewdog-widget/build/brewdog-widget.esm.js"></script> <script nomodule="" src="/brewdog-widget/build/brewdog-widget.js"></script> <script>
       const food = document.getElementById('food');
       const widget = document.getElementById('widget');
