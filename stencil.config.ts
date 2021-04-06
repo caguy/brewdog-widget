@@ -21,6 +21,10 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
+  devServer: {
+    openBrowser: false,
+    basePath: '/brewdog-widget',
+  },
   plugins: [
     sass(),
     postcss({
