@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Brewdog food pairing</title>
     <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
+
       html,
       body {
         display: flex;
@@ -12,6 +14,10 @@
         padding: 0;
         width: 100%;
         height: 100%;
+      }
+
+      * {
+        font-family: Roboto, sans-serif;
       }
 
       main {
@@ -26,6 +32,26 @@
       h2,
       .input {
         text-align: center;
+      }
+
+      input[type='text'] {
+        background: none;
+        padding: 0.5em 1em;
+        margin: 0;
+        font-size: 1.1rem;
+        border: solid 1px grey;
+        border-radius: 2.1em 0 0 2.1em;
+        margin-right: -0.3em;
+      }
+
+      input[type='submit'] {
+        background: none;
+        padding: 0.5em 1em;
+        margin: 0;
+        font-size: 1.1rem;
+        border: solid 1px grey;
+        border-radius: 0 2.1em 2.1em 0;
+        background-color: #c5cae9;
       }
     </style>
   </head>
